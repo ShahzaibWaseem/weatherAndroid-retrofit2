@@ -14,7 +14,7 @@ class WeatherForecast: AppCompatActivity() {
     }
 
     companion object {
-        const val baseURL = "http://api.openweathermap.org/"
+        const val baseURL = R.string.base_url
         const val apiKey = R.string.api_key
     }
 }
