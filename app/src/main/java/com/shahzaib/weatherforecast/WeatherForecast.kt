@@ -186,7 +186,7 @@ class WeatherForecast: AppCompatActivity() {
 
     companion object {
         const val baseURL = "https://api.openweathermap.org"
-        const val apiKey = "8ad184d5d752abf938dd69b3da8c1fab"
+        const val apiKey = "YOUR_API_KEY"
         const val sunIconURL = "https://cdn2.iconfinder.com/data/icons/weather-vol-2-7/512/"
     }
 }
