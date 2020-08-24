@@ -4,16 +4,18 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 
-class WeatherHistoryAdapter(private var list: List<String>, private val context: Context) :
+class WeatherHistoryAdapter(private var list: MutableList<MutableList<String>>, private val context: Context) :
     RecyclerView.Adapter<WeatherHistoryAdapter.CustomViewHolder>() {
 
-    class CustomViewHolder(val view: View) : RecyclerView.ViewHolder(view)
-    {
-        val textView = view.findViewById<TextView>(R.id.textValue)
+    class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val timeView: TextView = view.findViewById(R.id.threeHourTime)
+        val weatherIcon: ImageView = view.findViewById(R.id.threeHourIcon)
+        val temperatureView: TextView = view.findViewById(R.id.threeHourTemperature)
     }
 
     @NonNull
@@ -23,7 +25,9 @@ class WeatherHistoryAdapter(private var list: List<String>, private val context:
     }
 
     override fun onBindViewHolder(@NonNull holder: CustomViewHolder, position: Int) {
-        holder.textView.text = list[position]
+        holder.timeView.text = list[position][0]
+        DownloadImageTask(holder.weatherIcon).execute(list[position][1])
+        holder.temperatureView.text = list[position][2] + " °C"
     }
 
     override fun getItemCount() = list.size

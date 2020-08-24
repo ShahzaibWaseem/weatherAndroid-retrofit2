@@ -3,4 +3,9 @@
     <string name="base_url">http://api.openweathermap.org/</string>
     <string name="weather_icon_string">Weather Icon</string>
     <string name="icon_url">http://openweathermap.org/img/wn/</string>
+    <string name="wind_speed_tag">Wind Speed</string>
+    <string name="perceived_temperature_tag">Perceived Temperature</string>
+    <string name="humidity_tag">Humidity</string>
+    <string name="pressure_tag">Pressure</string>
+    <string name="powered_by">Powered By Open Weather Map</string>
 </resources>
